@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Valkyrie Fleet Wraps</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T78SB2DJ');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="preload" as="font" type="font/woff2" href="fonts/big-shoulders-display-var.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/public-sans-var.woff2" crossorigin>
+
+  <style>
+    @font-face{
+      font-family:'Big Shoulders Display';font-style:normal;font-weight:700 800;font-display:swap;
+      src:url('fonts/big-shoulders-display-var.woff2') format('woff2');
+    }
+    @font-face{
+      font-family:'Public Sans';font-style:normal;font-weight:400 800;font-display:swap;
+      src:url('fonts/public-sans-var.woff2') format('woff2');
+    }
+    :root {
+      --bg:        #FAF7F0;
+      --bg-1:      #F1EAD9;
+      --bg-2:      #FFFFFF;
+      --line:      #E4D9C0;
+      --line-2:    #D6C7A2;
+      --gold:      #8A5A00;
+      --gold-fill: #F0B429;
+      --gold-fill-dk:#D9A424;
+      --ink:       #211A10;
+      --text:      #4A4232;
+      --muted:     #6E6553;
+      --ff-d:      'Big Shoulders Display', sans-serif;
+      --ff-b:      'Public Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--ff-b);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding: 18px 24px;
+      display: flex;
+      justify-content: center;
+      background: var(--bg-2);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 56px 24px 72px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 560px;
+      text-align: center;
+    }
+
+    .check {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 28px;
+      border-radius: 50%;
+      background: var(--bg-1);
+      border: 1px solid var(--line-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .check svg { width: 38px; height: 38px; stroke: var(--gold); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: var(--ff-d);
+      font-weight: 800;
+      font-size: clamp(36px, 6vw, 52px);
+      line-height: 1.08;
+      letter-spacing: .2px;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    h1 span { color: var(--gold); }
+
+    .msg {
+      font-size: 17px;
+      color: var(--text);
+      max-width: 460px;
+      margin: 0 auto 6px;
+      line-height: 1.6;
+    }
+    .msg strong { color: var(--ink); }
+
+    .sub {
+      font-size: 14.5px;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    .phone-row {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 32px;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 32px;
+    }
+
+    .phone-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .phone-num {
+      font-family: var(--ff-d);
+      font-weight: 800;
+      font-size: clamp(28px, 5vw, 38px);
+      letter-spacing: .2px;
+      line-height: 1.2;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .phone-num:hover { color: var(--gold); }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-family: var(--ff-b);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1.5px solid transparent;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .ic { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    .btn-gold { background: var(--gold-fill); color: var(--ink); }
+    .btn-gold:hover { background: var(--gold-fill-dk); }
+
+    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-2); }
+    .btn-ghost:hover { border-color: var(--ink); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+      background: var(--bg-1);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T78SB2DJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <header>
+    <a href="index.html">
+      <img src="logo.webp" width="150" height="100" alt="Valkyrie Fleet Wraps" style="height:48px;width:auto;display:block;">
+    </a>
+  </header>
+
+  <main>
+    <div class="card">
+
+      <div class="check" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+      </div>
+
+      <div class="eyebrow">Request Received</div>
+
+      <h1>Thank <span>You</span></h1>
+
+      <p class="msg">We got your request. We'll be in touch within <strong>1 business day</strong> with your custom quote.</p>
+      <p class="sub">Keep an eye on your phone and email. Want to talk sooner? Call or text us now.</p>
+
+      <div class="phone-row">
+        <span class="phone-label">Call or Text</span>
+        <a href="tel:5044445039" class="phone-num">(504) 444-5039</a>
+      </div>
+
+      <div class="actions">
+        <a href="tel:5044445039" class="btn btn-gold">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M3 5c0 9 7 16 16 16l3-4-6-3-2 2c-2-1-4-3-5-5l2-2-3-6z"/></svg>
+          Call (504) 444-5039
+        </a>
+        <a href="index.html" class="btn btn-ghost">Back to Home</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Valkyrie Fleet Wraps &middot; 5609 Salmen St STE C, New Orleans, LA 70123<br>
+    <a href="tel:5044445039">(504) 444-5039</a> &middot; <a href="https://valkyriewraps.com" target="_blank" rel="noopener">valkyriewraps.com</a>
+  </footer>
+
+</body>
+</html>
