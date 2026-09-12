@@ -197,6 +197,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-family:var(--ff-b);font-size:15px;font-weight:800;cursor:pointer;margin-top:6px;
   }
   .form-submit:hover{background:var(--gold-fill-dk);}
+  .form-step[hidden]{display:none;}
+  .step-indicator{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  .form-step-actions{display:flex;gap:10px;align-items:center;}
+  .form-step-actions .form-submit{flex:1;}
+  .form-back{background:none;border:none;color:var(--muted);font-size:13px;font-weight:600;padding:15px 4px;cursor:pointer;white-space:nowrap;}
+  .form-back:hover{color:var(--ink);}
+  .biz-only{display:inline-block;background:rgba(240,180,41,0.12);border:1px solid var(--gold-fill);color:var(--gold);font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:5px;margin-top:14px;}
   .form-note{text-align:center;font-size:12px;color:var(--muted);margin-top:12px;}
   .form-offer{text-align:center;font-size:12.5px;color:var(--gold);margin-top:8px;font-weight:600;}
 
@@ -370,7 +377,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-content">
         <p class="eyebrow">New Orleans &middot; 3M Preferred Installer &middot; Since 2017</p>
         <h1 class="hero-h1">Your Trucks Are Already Driving New Orleans. Make Every Mile <span>Sell.</span></h1>
-        <p class="hero-sub">3M-certified wraps for vans, trucks, and trailers. Free quote on one call, most jobs finished in 1 to 3 days.</p>
+        <p class="hero-sub">3M-certified wraps for company vans, trucks, and trailers. Free quote on one call, most jobs finished in 1 to 3 days.</p>
+        <span class="biz-only">For business-owned vehicles only, not personal cars</span>
 
         <ul class="hero-bullets">
           <li><svg class="ic" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 5-star rated, 126 Google reviews</li>
@@ -391,14 +399,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="form-card-body">
           <div class="form-card-head">
-            <h3>Get Your Free Quote</h3>
-            <p>Less than 60 seconds. No obligation.</p>
+            <h3>Get Your Free Fleet Quote</h3>
+            <p>For business-owned vehicles only. Less than 60 seconds.</p>
           </div>
 
-          <form id="hero-form" action="https://services.leadconnectorhq.com/hooks/FvnVnnGvT8TrWzmIlMXz/webhook-trigger/6004111c-fd5a-45bb-b769-e3e681774f4a" method="POST">
+          <form id="hero-form" action="https://services.leadconnectorhq.com/hooks/FvnVnnGvT8TrWzmIlMXz/webhook-trigger/7f8b94f0-9fae-48ce-9f19-c5b537bba5a6" method="POST">
+            <div class="form-step" data-step="1">
             <div class="form-group">
-              <label for="h-name">First Name *</label>
-              <input type="text" id="h-name" name="firstName" placeholder="Your first name">
+              <label for="h-name">Full Name *</label>
+              <input type="text" id="h-name" name="firstName" placeholder="Your full name">
               <span class="field-error" id="h-name-err">Name is required.</span>
             </div>
             <div class="form-group">
@@ -412,11 +421,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <span class="field-error" id="h-email-err">A valid email is required.</span>
             </div>
             <div class="form-group">
-              <label for="h-company">Company Name</label>
+              <label for="h-company">Company Name *</label>
               <input type="text" id="h-company" name="companyName" placeholder="Your business name">
+              <span class="field-error" id="h-company-err">Company name is required.</span>
             </div>
             <div class="form-group">
-              <label for="h-vehicle">Vehicle Type</label>
+              <label for="h-vehicle">Vehicle Type *</label>
               <select id="h-vehicle" name="vehicleType">
                 <option value="" disabled selected>Select vehicle type&hellip;</option>
                 <option value="Van / Sprinter">Cargo Van / Sprinter</option>
@@ -426,8 +436,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <option value="Fleet (2+ vehicles)">Fleet Program (2+ vehicles)</option>
                 <option value="Other">Other</option>
               </select>
+              <span class="field-error" id="h-vehicle-err">Please select a vehicle type.</span>
             </div>
-            <button type="submit" class="form-submit">Get My Free Quote &rarr;</button>
+            <button type="submit" class="form-submit form-step-btn">Continue &rarr;</button>
+            </div>
+            <div class="form-step" data-step="2" hidden>
+              <p class="step-indicator" id="h-step-indicator">Step 2 of 2 &middot; A couple quick questions</p>
+              <div class="form-group">
+                <label for="h-role">Your Role at the Company *</label>
+                <select id="h-role" name="companyRole">
+                  <option value="" disabled selected>Select your role&hellip;</option>
+                  <option value="Owner">Owner</option>
+                  <option value="Fleet or Operations Manager">Fleet or Operations Manager</option>
+                  <option value="Marketing">Marketing</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="field-error" id="h-role-err">Please select your role.</span>
+              </div>
+              <div class="form-group">
+                <label for="h-industry">Industry *</label>
+                <select id="h-industry" name="industry">
+                  <option value="" disabled selected>Select your industry&hellip;</option>
+                  <option value="Construction / Trades">Construction / Trades</option>
+                  <option value="HVAC / Plumbing / Electrical">HVAC / Plumbing / Electrical</option>
+                  <option value="Delivery &amp; Logistics">Delivery &amp; Logistics</option>
+                  <option value="Food &amp; Beverage">Food &amp; Beverage</option>
+                  <option value="Home Services">Home Services</option>
+                  <option value="Retail">Retail</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="field-error" id="h-industry-err">Please select an industry.</span>
+              </div>
+              <div class="form-step-actions">
+                <button type="button" class="form-back" data-back-for="h">&larr; Back</button>
+                <button type="submit" class="form-submit">Get My Free Quote &rarr;</button>
+              </div>
+            </div>
           </form>
 
           <div class="form-success" id="hero-success">
@@ -602,13 +646,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="form-card">
-        <h3>Get Your Free Quote</h3>
-        <p class="fc-sub">No pressure, no obligation. We reply within 1 business day.</p>
+        <h3>Get Your Free Fleet Quote</h3>
+        <p class="fc-sub">For business-owned vehicles only. No pressure, we reply within 1 business day.</p>
 
-        <form id="contact-form" action="https://services.leadconnectorhq.com/hooks/FvnVnnGvT8TrWzmIlMXz/webhook-trigger/6004111c-fd5a-45bb-b769-e3e681774f4a" method="POST">
+        <form id="contact-form" action="https://services.leadconnectorhq.com/hooks/FvnVnnGvT8TrWzmIlMXz/webhook-trigger/7f8b94f0-9fae-48ce-9f19-c5b537bba5a6" method="POST">
+          <div class="form-step" data-step="1">
           <div class="form-group">
-            <label for="c-name">First Name *</label>
-            <input type="text" id="c-name" name="firstName" placeholder="Your first name">
+            <label for="c-name">Full Name *</label>
+            <input type="text" id="c-name" name="firstName" placeholder="Your full name">
             <span class="field-error" id="c-name-err">Name is required.</span>
           </div>
           <div class="form-group">
@@ -622,11 +667,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="field-error" id="c-email-err">A valid email is required.</span>
           </div>
           <div class="form-group">
-            <label for="c-company">Company Name</label>
+            <label for="c-company">Company Name *</label>
             <input type="text" id="c-company" name="companyName" placeholder="Your business name">
+            <span class="field-error" id="c-company-err">Company name is required.</span>
           </div>
           <div class="form-group">
-            <label for="c-vehicle">Vehicle Type</label>
+            <label for="c-vehicle">Vehicle Type *</label>
             <select id="c-vehicle" name="vehicleType">
               <option value="" disabled selected>Select vehicle type&hellip;</option>
               <option value="Van / Sprinter">Cargo Van / Sprinter</option>
@@ -636,8 +682,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <option value="Fleet (2+ vehicles)">Fleet Program (2+ vehicles)</option>
               <option value="Other">Other</option>
             </select>
+            <span class="field-error" id="c-vehicle-err">Please select a vehicle type.</span>
           </div>
-          <button type="submit" class="form-submit">Get My Free Quote &rarr;</button>
+          <button type="submit" class="form-submit form-step-btn">Continue &rarr;</button>
+          </div>
+          <div class="form-step" data-step="2" hidden>
+            <p class="step-indicator" id="c-step-indicator">Step 2 of 2 &middot; A couple quick questions</p>
+            <div class="form-group">
+              <label for="c-role">Your Role at the Company *</label>
+              <select id="c-role" name="companyRole">
+                <option value="" disabled selected>Select your role&hellip;</option>
+                <option value="Owner">Owner</option>
+                <option value="Fleet or Operations Manager">Fleet or Operations Manager</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="field-error" id="c-role-err">Please select your role.</span>
+            </div>
+            <div class="form-group">
+              <label for="c-industry">Industry *</label>
+              <select id="c-industry" name="industry">
+                <option value="" disabled selected>Select your industry&hellip;</option>
+                <option value="Construction / Trades">Construction / Trades</option>
+                <option value="HVAC / Plumbing / Electrical">HVAC / Plumbing / Electrical</option>
+                <option value="Delivery &amp; Logistics">Delivery &amp; Logistics</option>
+                <option value="Food &amp; Beverage">Food &amp; Beverage</option>
+                <option value="Home Services">Home Services</option>
+                <option value="Retail">Retail</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="field-error" id="c-industry-err">Please select an industry.</span>
+            </div>
+            <div class="form-step-actions">
+              <button type="button" class="form-back" data-back-for="c">&larr; Back</button>
+              <button type="submit" class="form-submit">Get My Free Quote &rarr;</button>
+            </div>
+          </div>
         </form>
 
         <div class="form-success" id="contact-success">
@@ -716,48 +796,94 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   /* Form validation + submission (shared by hero-form and contact-form) */
-  function validateForm(form, prefix){
+  function setError(errId, el, show){
+    var err = document.getElementById(errId);
+    el.classList.toggle('error', show);
+    err.classList.toggle('visible', show);
+    return show;
+  }
+
+  function validateStep1(form, prefix){
     var nameEl = form.querySelector('#' + prefix + '-name');
     var phoneEl = form.querySelector('#' + prefix + '-phone');
     var emailEl = form.querySelector('#' + prefix + '-email');
+    var companyEl = form.querySelector('#' + prefix + '-company');
+    var vehicleEl = form.querySelector('#' + prefix + '-vehicle');
     var valid = true;
 
-    function setError(el, errId, show){
-      var err = document.getElementById(errId);
-      el.classList.toggle('error', show);
-      err.classList.toggle('visible', show);
-      if (show) valid = false;
-    }
-
-    setError(nameEl, prefix + '-name-err', nameEl.value.trim() === '');
-    setError(phoneEl, prefix + '-phone-err', phoneEl.value.trim() === '');
+    if (setError(prefix + '-name-err', nameEl, nameEl.value.trim() === '')) valid = false;
+    if (setError(prefix + '-phone-err', phoneEl, phoneEl.value.trim() === '')) valid = false;
 
     var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim());
-    setError(emailEl, prefix + '-email-err', !emailOk);
+    if (setError(prefix + '-email-err', emailEl, !emailOk)) valid = false;
     document.getElementById(prefix + '-email-err').textContent = emailEl.value.trim() === '' ? 'Email is required.' : 'Please enter a valid email.';
 
+    if (companyEl && setError(prefix + '-company-err', companyEl, companyEl.value.trim() === '')) valid = false;
+    if (vehicleEl && setError(prefix + '-vehicle-err', vehicleEl, vehicleEl.value.trim() === '')) valid = false;
+
     return valid;
+  }
+
+  function validateStep2(form, prefix){
+    var roleEl = form.querySelector('#' + prefix + '-role');
+    var industryEl = form.querySelector('#' + prefix + '-industry');
+    var valid = true;
+    if (roleEl && setError(prefix + '-role-err', roleEl, roleEl.value.trim() === '')) valid = false;
+    if (industryEl && setError(prefix + '-industry-err', industryEl, industryEl.value.trim() === '')) valid = false;
+    return valid;
+  }
+
+  function goToStep(form, step){
+    form.querySelectorAll('.form-step').forEach(function(s){
+      s.hidden = (s.getAttribute('data-step') !== String(step));
+    });
+    if (step === 2) {
+      var firstField = form.querySelector('.form-step[data-step="2"] select, .form-step[data-step="2"] input');
+      if (firstField) firstField.focus({ preventScroll: true });
+    }
+  }
+
+  function currentStepOf(form){
+    var visible = form.querySelector('.form-step:not([hidden])');
+    return visible ? visible.getAttribute('data-step') : '1';
   }
 
   function setupForm(formId, prefix){
     var form = document.getElementById(formId);
     if (!form) return;
 
-    ['name','phone','email'].forEach(function(f){
+    ['name','phone','email','company','vehicle','role','industry'].forEach(function(f){
       var el = form.querySelector('#' + prefix + '-' + f);
       var err = document.getElementById(prefix + '-' + f + '-err');
-      if (!el) return;
-      el.addEventListener('input', function(){
+      if (!el || !err) return;
+      var evt = (el.tagName === 'SELECT') ? 'change' : 'input';
+      el.addEventListener(evt, function(){
         el.classList.remove('error');
         err.classList.remove('visible');
       });
     });
 
+    var backBtn = form.querySelector('.form-back[data-back-for="' + prefix + '"]');
+    if (backBtn) backBtn.addEventListener('click', function(){ goToStep(form, 1); });
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      if (!validateForm(form, prefix)) {
-        var firstErr = form.querySelector('.error');
-        if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      var step = currentStepOf(form);
+
+      if (step === '1') {
+        if (!validateStep1(form, prefix)) {
+          var firstErr1 = form.querySelector('.form-step[data-step="1"] .error');
+          if (firstErr1) firstErr1.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        goToStep(form, 2);
+        return;
+      }
+
+      // step 2: the real submission
+      if (!validateStep2(form, prefix)) {
+        var firstErr2 = form.querySelector('.form-step[data-step="2"] .error');
+        if (firstErr2) firstErr2.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
       var action = form.getAttribute('action');
