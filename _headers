@@ -1,0 +1,20 @@
+# Security headers + noindex header (this is a paid-traffic-only funnel, kept out of
+# search deliberately, so the header backs up the <meta name="robots"> tag on every
+# response, not just the ones a crawler bothers to parse HTML for).
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  X-Robots-Tag: noindex, nofollow
+
+# HTML: short cache so an edit reaches everyone within minutes
+/*.html
+  Cache-Control: public, max-age=300
+
+# images and fonts: long cache. A changed image needs a NEW filename.
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
