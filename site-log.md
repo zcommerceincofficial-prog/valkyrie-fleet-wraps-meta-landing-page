@@ -57,3 +57,13 @@ export, so it has no `site/` raw-export folder and no build step — `index.html
   two. `_headers`, `robots.txt`, security headers untouched, still applying site-wide.
   `scripts/mobile-qa.mjs` still pending, now more relevant since this is a full
   design swap, not just a form-field change.
+- **2026-09-16** — Izaiah caught a real gap in the pasted design: it carried GTM
+  (`GTM-T78SB2DJ`) but dropped the direct Meta Pixel code that the true original had
+  running alongside it. Restored both, verbatim from the last known-good live fetch,
+  pixel `1002332386087241`: the base snippet (init + PageView, plus its noscript
+  fallback) on both `index.html` and `thank-you.html`, and the separate
+  `fbq('track', 'Lead')` block on `thank-you.html` only. GTM left in place, untouched --
+  the true original ran GTM and the direct pixel at the same time, so both stay.
+  Confirmed the post-submit redirect (`REDIRECT='thank-you.html'` firing
+  `window.location.href` in the fetch's `.finally()`) was never touched by any of
+  today's changes.
