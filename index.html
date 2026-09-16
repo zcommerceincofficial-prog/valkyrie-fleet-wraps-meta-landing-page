@@ -218,12 +218,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-family:var(--ff-b);font-size:15px;font-weight:800;cursor:pointer;margin-top:6px;
   }
   .form-submit:hover{background:var(--gold-fill-dk);}
-  .form-step[hidden]{display:none;}
-  .step-indicator{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
-  .form-step-actions{display:flex;gap:10px;align-items:center;}
-  .form-step-actions .form-submit{flex:1;}
-  .form-back{background:none;border:none;color:var(--muted);font-size:13px;font-weight:600;padding:15px 4px;cursor:pointer;white-space:nowrap;}
-  .form-back:hover{color:var(--ink);}
   .biz-only{display:inline-block;background:rgba(240,180,41,0.12);border:1px solid var(--gold-fill);color:var(--gold);font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:5px;margin-top:14px;}
   .form-note{text-align:center;font-size:12px;color:var(--muted);margin-top:12px;}
   .form-offer{text-align:center;font-size:12.5px;color:var(--gold);margin-top:8px;font-weight:600;}
@@ -426,7 +420,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <form id="hero-form" action="https://services.leadconnectorhq.com/hooks/FvnVnnGvT8TrWzmIlMXz/webhook-trigger/7f8b94f0-9fae-48ce-9f19-c5b537bba5a6" method="POST">
-            <div class="form-step" data-step="1">
             <div class="form-group">
               <label for="h-name">Full Name *</label>
               <input type="text" id="h-name" name="firstName" placeholder="Your full name">
@@ -460,40 +453,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </select>
               <span class="field-error" id="h-vehicle-err">Please select a vehicle type.</span>
             </div>
-            <button type="submit" class="form-submit form-step-btn">Continue &rarr;</button>
-            </div>
-            <div class="form-step" data-step="2" hidden>
-              <p class="step-indicator" id="h-step-indicator">Step 2 of 2 &middot; A couple quick questions</p>
-              <div class="form-group">
-                <label for="h-role">Your Role at the Company *</label>
-                <select id="h-role" name="companyRole">
-                  <option value="" disabled selected>Select your role&hellip;</option>
-                  <option value="Owner">Owner</option>
-                  <option value="Fleet or Operations Manager">Fleet or Operations Manager</option>
-                  <option value="Marketing">Marketing</option>
-                  <option value="Other">Other</option>
-                </select>
-                <span class="field-error" id="h-role-err">Please select your role.</span>
-              </div>
-              <div class="form-group">
-                <label for="h-industry">Industry *</label>
-                <select id="h-industry" name="industry">
-                  <option value="" disabled selected>Select your industry&hellip;</option>
-                  <option value="Construction / Trades">Construction / Trades</option>
-                  <option value="HVAC / Plumbing / Electrical">HVAC / Plumbing / Electrical</option>
-                  <option value="Delivery &amp; Logistics">Delivery &amp; Logistics</option>
-                  <option value="Food &amp; Beverage">Food &amp; Beverage</option>
-                  <option value="Home Services">Home Services</option>
-                  <option value="Retail">Retail</option>
-                  <option value="Other">Other</option>
-                </select>
-                <span class="field-error" id="h-industry-err">Please select an industry.</span>
-              </div>
-              <div class="form-step-actions">
-                <button type="button" class="form-back" data-back-for="h">&larr; Back</button>
-                <button type="submit" class="form-submit">Get My Free Quote &rarr;</button>
-              </div>
-            </div>
+            <button type="submit" class="form-submit">Get My Free Quote &rarr;</button>
           </form>
 
           <div class="form-success" id="hero-success">
@@ -672,7 +632,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="fc-sub">For business-owned vehicles only. No pressure, we reply within 1 business day.</p>
 
         <form id="contact-form" action="https://services.leadconnectorhq.com/hooks/FvnVnnGvT8TrWzmIlMXz/webhook-trigger/7f8b94f0-9fae-48ce-9f19-c5b537bba5a6" method="POST">
-          <div class="form-step" data-step="1">
           <div class="form-group">
             <label for="c-name">Full Name *</label>
             <input type="text" id="c-name" name="firstName" placeholder="Your full name">
@@ -706,40 +665,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </select>
             <span class="field-error" id="c-vehicle-err">Please select a vehicle type.</span>
           </div>
-          <button type="submit" class="form-submit form-step-btn">Continue &rarr;</button>
-          </div>
-          <div class="form-step" data-step="2" hidden>
-            <p class="step-indicator" id="c-step-indicator">Step 2 of 2 &middot; A couple quick questions</p>
-            <div class="form-group">
-              <label for="c-role">Your Role at the Company *</label>
-              <select id="c-role" name="companyRole">
-                <option value="" disabled selected>Select your role&hellip;</option>
-                <option value="Owner">Owner</option>
-                <option value="Fleet or Operations Manager">Fleet or Operations Manager</option>
-                <option value="Marketing">Marketing</option>
-                <option value="Other">Other</option>
-              </select>
-              <span class="field-error" id="c-role-err">Please select your role.</span>
-            </div>
-            <div class="form-group">
-              <label for="c-industry">Industry *</label>
-              <select id="c-industry" name="industry">
-                <option value="" disabled selected>Select your industry&hellip;</option>
-                <option value="Construction / Trades">Construction / Trades</option>
-                <option value="HVAC / Plumbing / Electrical">HVAC / Plumbing / Electrical</option>
-                <option value="Delivery &amp; Logistics">Delivery &amp; Logistics</option>
-                <option value="Food &amp; Beverage">Food &amp; Beverage</option>
-                <option value="Home Services">Home Services</option>
-                <option value="Retail">Retail</option>
-                <option value="Other">Other</option>
-              </select>
-              <span class="field-error" id="c-industry-err">Please select an industry.</span>
-            </div>
-            <div class="form-step-actions">
-              <button type="button" class="form-back" data-back-for="c">&larr; Back</button>
-              <button type="submit" class="form-submit">Get My Free Quote &rarr;</button>
-            </div>
-          </div>
+          <button type="submit" class="form-submit">Get My Free Quote &rarr;</button>
         </form>
 
         <div class="form-success" id="contact-success">
@@ -846,35 +772,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return valid;
   }
 
-  function validateStep2(form, prefix){
-    var roleEl = form.querySelector('#' + prefix + '-role');
-    var industryEl = form.querySelector('#' + prefix + '-industry');
-    var valid = true;
-    if (roleEl && setError(prefix + '-role-err', roleEl, roleEl.value.trim() === '')) valid = false;
-    if (industryEl && setError(prefix + '-industry-err', industryEl, industryEl.value.trim() === '')) valid = false;
-    return valid;
-  }
-
-  function goToStep(form, step){
-    form.querySelectorAll('.form-step').forEach(function(s){
-      s.hidden = (s.getAttribute('data-step') !== String(step));
-    });
-    if (step === 2) {
-      var firstField = form.querySelector('.form-step[data-step="2"] select, .form-step[data-step="2"] input');
-      if (firstField) firstField.focus({ preventScroll: true });
-    }
-  }
-
-  function currentStepOf(form){
-    var visible = form.querySelector('.form-step:not([hidden])');
-    return visible ? visible.getAttribute('data-step') : '1';
-  }
-
   function setupForm(formId, prefix){
     var form = document.getElementById(formId);
     if (!form) return;
 
-    ['name','phone','email','company','vehicle','role','industry'].forEach(function(f){
+    ['name','phone','email','company','vehicle'].forEach(function(f){
       var el = form.querySelector('#' + prefix + '-' + f);
       var err = document.getElementById(prefix + '-' + f + '-err');
       if (!el || !err) return;
@@ -885,29 +787,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
 
-    var backBtn = form.querySelector('.form-back[data-back-for="' + prefix + '"]');
-    if (backBtn) backBtn.addEventListener('click', function(){ goToStep(form, 1); });
-
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var step = currentStepOf(form);
 
-      if (step === '1') {
-        if (!validateStep1(form, prefix)) {
-          var firstErr1 = form.querySelector('.form-step[data-step="1"] .error');
-          if (firstErr1) firstErr1.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          return;
-        }
-        goToStep(form, 2);
+      if (!validateStep1(form, prefix)) {
+        var firstErr1 = form.querySelector('.error');
+        if (firstErr1) firstErr1.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
 
-      // step 2: the real submission
-      if (!validateStep2(form, prefix)) {
-        var firstErr2 = form.querySelector('.form-step[data-step="2"] .error');
-        if (firstErr2) firstErr2.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-      }
       var action = form.getAttribute('action');
       var data = Object.fromEntries(new FormData(form).entries());
       fetch(action, {

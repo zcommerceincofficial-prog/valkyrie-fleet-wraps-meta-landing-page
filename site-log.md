@@ -29,3 +29,15 @@ export, so it has no `site/` raw-export folder and no build step — `index.html
   `Disallow: /` on purpose — it should never compete with `valkriewraps.xyz` in organic
   search. Deployed, probed, and re-ran the check live: all page-level checks pass.
   `scripts/mobile-qa.mjs` run pending against both live pages, all 8 viewports.
+- **2026-09-16** — Discovered the 09-12 two-step form (Company Role, Industry as a
+  second step) was committed to this repo but never actually deployed; live had been
+  quietly running the original single-step form the whole time. Izaiah's call: drop the
+  two-step form for good, do not re-attempt deploying it. Reverted `index.html` to the
+  single-step form by pulling the exact bytes off the live site (proven-working source
+  of truth) rather than hand-reversing the two-step diff, so the repo now matches
+  production exactly. Confirmed before reverting: both forms still post to the correct,
+  currently-live webhook trigger (`7f8b94f0-9fae-48ce-9f19-c5b537bba5a6`) with zero
+  occurrences of an unrelated older trigger ID (`6004111c...`) found in an unrelated
+  stale file that was never used. `thank-you.html` needed no change, already identical
+  to live. Everything else from 09-12 (schema, canonical, `_headers`, `robots.txt`)
+  was already live and untouched by this revert. `scripts/mobile-qa.mjs` still pending.
