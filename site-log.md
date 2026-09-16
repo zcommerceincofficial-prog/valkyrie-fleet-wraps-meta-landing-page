@@ -41,3 +41,19 @@ export, so it has no `site/` raw-export folder and no build step — `index.html
   stale file that was never used. `thank-you.html` needed no change, already identical
   to live. Everything else from 09-12 (schema, canonical, `_headers`, `robots.txt`)
   was already live and untouched by this revert. `scripts/mobile-qa.mjs` still pending.
+- **2026-09-16** — Izaiah's call: replace the light-cream design with the dark navy/gold
+  design (`--bg:#0B0E13`, `--gold:#FFC20E`, Big Shoulders Display + Public Sans), pasted
+  in from an external source. Applied as given, with two corrections flagged and made
+  before deploying:
+  1. Webhook trigger in the pasted source was `6004111c-fd5a-45bb-b769-e3e681774f4a`,
+     never tested against this project. Swapped for `7f8b94f0-9fae-48ce-9f19-c5b537bba5a6`,
+     the one confirmed working via a real test submission (see 09-11 entry).
+  2. Canonical/og:url in the pasted source pointed at `valkriewraps.xyz` (the other
+     Valkyrie site's domain) -- the exact bug already found and fixed once on 09-12.
+     Pointed back at this project's own address on both index.html and thank-you.html
+     (thank-you.html had no canonical at all in the pasted source; added one).
+  LocalBusiness JSON-LD schema, present in the previous version, is NOT in this pasted
+  design and was not re-added -- deployed as given rather than silently combining the
+  two. `_headers`, `robots.txt`, security headers untouched, still applying site-wide.
+  `scripts/mobile-qa.mjs` still pending, now more relevant since this is a full
+  design swap, not just a form-field change.
